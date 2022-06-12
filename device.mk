@@ -14,21 +14,5 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := markw
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-
-# Inherit from markw device
-$(call inherit-product, device/xiaomi/markw/device.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
-
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := markw
-PRODUCT_NAME := omni_markw
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 4 Prime
-PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8953
